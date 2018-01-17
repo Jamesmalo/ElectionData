@@ -9,6 +9,6 @@ function electionData(array){
 
 }
 
-function commaParser(){
-
+function commaParser(line){
+  
 }
