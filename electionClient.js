@@ -4,6 +4,24 @@ const electionParser = require('./electionParser.js');
 let list = FR.LoadFileIntoArrayByLine('electionSimplified.csv');
 let parsedlist = electionParser(list);
 
+function stateLeastcounties(list,n){
+  let states = new Array(50)
+  states.fill(0)
+  for(let i=0;i<list[i].length;i++){
+    if(){
+
+    }
+  }
+}
+
+function stateMostcounties(){
+
+}
+
+function stateExactcounties(){
+
+}
+
 function stateTotals(list){
   let states = [];
   for(let i=0;i<list.length;i++){
@@ -27,10 +45,30 @@ function statePercent(p,list){
 }
 
 function countiesLtoG(){
-    let counties = [];
-    for(let i=0;i<list.length;i++){
-        if(list[i].statePostal == ){
+    let sortedCounties = list.sort(function(a,b){
+          return (a.obamaVote+a.romneyVote)-(b.obamaVote+b.romneyVote)
+        });
+      return sortedCounties;
+}
 
-        }
+function countiesWon(){
+  let obamaWon = [];
+  let romneyWon = [];
+  for(let i=0;i<list.length;i++){
+    if(list[i].obamaVote > list[i].romneyVote){
+      obamaWon.push(list[i].county);
+    else{
+      romneyVote.push(list[i].county);
     }
+    }
+  }
+  return obamaWon, romneyWon;
+}
+
+function countyLargetdiff(){
+
+}
+
+function countyLargestvoteDiff(){
+
 }
