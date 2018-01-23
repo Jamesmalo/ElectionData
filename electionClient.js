@@ -7,19 +7,64 @@ let parsedlist = electionParser(list);
 function stateLeastcounties(list,n){
   let states = new Array(50)
   states.fill(0)
-  for(let i=0;i<list[i].length;i++){
-    if(){
-
+  for(let i=0;i<list.length;i++){
+    if(list[i].fips != 0){
+      states[i] += 1;
+    }
+    if(list[i].statePostal != list[i+1].statePostal){
+      i++;
     }
   }
+  let index = [];
+  for(let i=0;i<50;i++){
+    if(states[i] < n){
+      index.push(i);
+    }
+  }
+  //convert i's into states
+  return index;
 }
 
-function stateMostcounties(){
-
+function stateMostcounties(list,n){
+  let states = new Array(50)
+  states.fill(0)
+  for(let i=0;i<list.length;i++){
+    if(list[i].fips != 0){
+      states[i] += 1;
+    }
+    if(list[i].statePostal != list[i+1].statePostal){
+      i++;
+    }
+  }
+  let index = [];
+  for(let i=0;i<50;i++){
+    if(states[i] > n){
+      index.push(i);
+    }
+  }
+  //convert i's into states
+  return index;
 }
 
-function stateExactcounties(){
-
+function stateExactcounties(list,n){
+  let states = new Array(50)
+  states.fill(0)
+  for(let i=0;i<list.length;i++){
+    if(list[i].fips != 0){
+      states[i] += 1;
+    }
+    if(list[i].statePostal != list[i+1].statePostal){
+      i++;
+    }
+  }
+  let index = [];
+  for(let i=0;i<50;i++){
+    if(states[i] = n){
+      index.push(i);
+    }
+  }
+  //convert i's into states
+  return index;
 }
 
 function stateTotals(list){
