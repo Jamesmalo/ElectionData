@@ -96,22 +96,24 @@ function countiesLtoG(){
       return sortedCounties;
 }
 
-function countiesWon(){
-  let obamaWon = [];
-  let romneyWon = [];
-  for(let i=0;i<list.length;i++){
-    if(list[i].obamaVote > list[i].romneyVote){
-      obamaWon.push(list[i].county);
-    else{
-      romneyVote.push(list[i].county);
-    }
+function countiesWon(candidate){
+  let candidateWon = [];
+  let obama = (candidate == "obama");
+  if(obama){
+    for(let i=0;i<list.length;i++){
+      candidateWon.push(list[i].county)
     }
   }
-  return obamaWon, romneyWon;
+  else{
+    for(let i=0;i<list.length;i++){
+      candidateWon.push(list[i].county)
+    }
+  }
+  return candidateWon;
 }
 
-function countyLargetdiff(){
-
+function countyLargestdiff(){
+  
 }
 
 function countyLargestvoteDiff(){
