@@ -59,7 +59,7 @@ function stateExactcounties(list,n){
   }
   let index = [];
   for(let i=0;i<50;i++){
-    if(states[i] = n){
+    if(states[i] == n){
       index.push(i);
     }
   }
@@ -113,7 +113,21 @@ function countiesWon(candidate){
 }
 
 function countyLargestdiff(){
-  
+  let temp;
+  let state;
+  for(let i=0;i<list.length;i++){
+    if(list[i].fips != 0){
+      temp = Math.abs(list[i].obamaPercentage-list[i].romneyPercentage);
+      state = list[i].statePostal;
+      break;
+    }
+  }
+  for(let i=0;i<list.length;i++){
+    let diff = Math.abs(list[i].obamaPercentage-list[i].romneyPercentage)
+    if(diff > temp){
+      temp = diff;
+    }
+  }
 }
 
 function countyLargestvoteDiff(){
